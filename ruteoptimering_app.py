@@ -66,10 +66,10 @@ def create_data_model(df, indstillinger_df, gmaps):
     df["RuteNr"] = df.get("RuteNr", pd.Series([None]*len(df)))
 
     try:
-        num_vehicles = int(indstillinger_df.loc["AntalKøretøjer", "Værdi"])
+        num_vehicles = int(Indstillinger_df.loc["AntalKøretøjer", "Værdi"])
     except Exception:
         st.warning("⚠️ 'AntalKøretøjer' ikke fundet – bruger 1 som standard.")
-        num_vehicles = 1
+        num_vehicles = 10
 
     stop_names = df["Navn"].tolist()
     addresses = df["Adresse"].tolist()
